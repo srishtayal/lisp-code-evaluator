@@ -100,9 +100,9 @@ export default function ExpressionInput({
           <Button
             onClick={onEvaluate}
             disabled={!isValid}
-            className="flex items-center gap-1 bg-primary-600 hover:bg-primary-700"
+            className="flex items-center gap-1 bg-green-500"
           >
-            <Play className="h-4 w-4" />
+            <Play className="h-4 bg-green-500 w-4" />
             Evaluate
           </Button>
         </div>
