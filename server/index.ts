@@ -60,11 +60,15 @@ app.use((req, res, next) => {
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
   // Use PORT provided in environment or default to 3000
-const port = parseInt(process.env.PORT || "3000", 10);
+  const port = parseInt(process.env.PORT || "3000", 10);
 
-// Listen on `port` and 0.0.0.0
-app.listen(port, "0.0.0.0", function () {
-  // ...
-});
+  server.listen({
+    port,
+    host: "0.0.0.0",
+    reusePort: true,
+  }, () => {
+    console.log(`Serving on port ${port}`);
+  });
+
 
 })();
